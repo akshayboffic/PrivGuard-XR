@@ -21,8 +21,11 @@ POPPLER_PATH = None
 if os.name == "nt":
     POPPLER_PATH = r"C:\### Domain\poppler-25.07.0\Library\bin"
 
-nlp = spacy.load("en_core_web_sm")
-
+try:
+    nlp = spacy.load("en_core_web_sm")
+except OSError:
+    import en_core_web_sm
+    nlp = en_core_web_sm.load()
 # ---------------- India-specific PII patterns ----------------
 PII_PATTERNS = {
     "AADHAAR": r"\b\d{4}\s\d{4}\s\d{4}\b",
@@ -385,4 +388,5 @@ with tabs[2]:
         st.info("No audit log available yet.")
     except Exception as e:
         st.error(f"Error loading audit log: {e}")
+
 
