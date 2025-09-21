@@ -1,6 +1,6 @@
 streamlit
 pillow
-opencv-python
+opencv-python-headless
 pytesseract
 spacy
 torch
@@ -10,3 +10,4 @@ watchdog
 numpy
 cryptography
 pdf2image
+
