@@ -1,0 +1,12 @@
+streamlit
+pillow
+opencv-python
+pytesseract
+spacy
+torch
+torchvision
+ultralytics
+watchdog
+numpy
+cryptography
+pdf2image
